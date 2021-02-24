@@ -1,0 +1,29 @@
+import time
+import winsound
+
+while True:
+    
+    try:
+        user_input = input("How many minutes would you like to study: ")
+        user_input = int(user_input)*60
+
+        for i in range (user_input,0,-1):
+            time.sleep(1)
+
+            if i == 1:
+                print("done!")
+                winsound.Beep(1000,10) 
+
+            if i%60 == 0:
+                minute = str(i/60)
+                
+                if minute == "1.0":
+                    print(minute +" minute remaining.")
+
+                else:
+                    print(minute +" minutes remaining.")
+
+        break 
+
+    except ValueError:
+        print("Please provide a valid time: ")
